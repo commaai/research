@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>comma.ai research</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+
+        <p class="view"><a href="https://github.com/commaai/research">View on GitHub <small>commaai/research</small></a></p>
+
+      </header>
+      <section>
+        <h1>
+<a id="the-peoples-comma" class="anchor" href="#the-peoples-comma" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>the people's comma</h1>
+
+<h2>
+<a id="the-paper" class="anchor" href="#the-paper" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>the paper</h2>
+
+<p><a href="https://github.com/commaai/research/blob/master/paper/commalds.pdf">Learning a Driving Simulator</a></p>
+
+<h2>
+<a id="the-commaai-driving-dataset" class="anchor" href="#the-commaai-driving-dataset" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>the comma.ai driving dataset</h2>
+
+<p>7 and a quarter hours of largely highway driving. Enough to train what we had in <a href="http://www.bloomberg.com/features/2015-george-hotz-self-driving-car/">Bloomberg</a>.</p>
+
+<pre><code>dog/2016-01-30--11-24-51 (7.7G)
+dog/2016-01-30--13-46-00 (8.5G)
+dog/2016-01-31--19-19-25 (3.0G)
+dog/2016-02-02--10-16-58 (8.1G)
+dog/2016-02-08--14-56-28 (3.9G)
+dog/2016-02-11--21-32-47 (13G)
+dog/2016-03-29--10-50-20 (12G)
+emily/2016-04-21--14-48-08 (4.4G)
+emily/2016-05-12--22-20-00 (7.5G)
+frodo/2016-06-02--21-39-29 (6.5G)
+frodo/2016-06-08--11-46-01 (2.7G)
+</code></pre>
+
+<h2>
+<a id="examples" class="anchor" href="#examples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Examples</h2>
+
+<p>We present two Machine Learning Experiments to show
+possible ways to use this dataset:</p>
+
+<p><img src="./images/selfsteer.gif"></p>
+
+<p><a href="https://github.com/commaai/research/blob/master/SelfSteering.md">Training a steering angle predictor</a></p>
+
+<p><img src="./images/drive_simulator.gif"></p>
+
+<p><a href="https://github.com/commaai/research/blob/master/DriveSim.md">Training a generative image model</a></p>
+
+<h2>
+<a id="downloading-the-dataset" class="anchor" href="#downloading-the-dataset" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Downloading the dataset</h2>
+
+<pre><code>./get_data.sh
+</code></pre>
+
+<p>45 GB compressed, 80 GB uncompressed</p>
+
+<p>Dataset referenced on this page is copyrighted by comma.ai and published under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License. This means that you must attribute the work in the manner specified by the authors, you may not use this work for commercial purposes and if you alter, transform, or build upon this work, you may distribute the resulting work only under the same license.</p>
+
+<h2>
+<a id="dataset-structure" class="anchor" href="#dataset-structure" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dataset structure</h2>
+
+<p>The dataset consists of 10 videos clips of variable size recorded at 20 Hz
+with a camera mounted on the windshield of an Acura ILX 2016. In parallel to the videos
+we also recorded some measurements such as car's speed, acceleration,
+steering angle, GPS coordinates, gyroscope angles. See the full <code>log</code> list <a href="Logs.md">here</a>.
+These measurements are transformed into a uniform 100 Hz time base.</p>
+
+<p>The dataset folder structure is the following:</p>
+
+<div class="highlight highlight-source-shell"><pre>+-- dataset
+<span class="pl-k">|</span>   +-- camera
+<span class="pl-k">|</span>   <span class="pl-k">|</span>   +-- 2016-04-21--14-48-08
+<span class="pl-k">|</span>   <span class="pl-k">|</span>   ...
+<span class="pl-k">|</span>   +-- log
+<span class="pl-k">|</span>   <span class="pl-k">|</span>   +-- 2016-04-21--14-48-08
+<span class="pl-k">|</span>   <span class="pl-k">|</span>   ...</pre></div>
+
+<p>All the files come in hdf5 format and are named with the time they were recorded.
+The camera dataset has shape <code>number_frames x 3 x 160 x 320</code> and <code>uint8</code> type.
+One of the <code>log</code> hdf5-datasets is called <code>cam1_ptr</code> and addresses the alignment
+between camera frames and the other measurements.</p>
+
+<h2>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements</h2>
+
+<p><a href="https://www.continuum.io/downloads">anaconda</a><br>
+<a href="https://github.com/tensorflow/tensorflow">tensorflow-0.9</a><br>
+<a href="https://github.com/fchollet/keras">keras-1.0.6</a><br>
+<a href="https://anaconda.org/menpo/opencv3">cv2</a></p>
+
+<h2>
+<a id="hiring" class="anchor" href="#hiring" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Hiring</h2>
+
+<p>Want a job at <a href="http://comma.ai">comma.ai</a>?</p>
+
+<p>Show us amazing stuff on this dataset</p>
+
+<h2>
+<a id="credits" class="anchor" href="#credits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Credits</h2>
+
+<p>Riccardo Biasini, George Hotz, Sam Khalandovsky, Eder Santana, and Niel van der Westhuizen</p>
+      </section>
+      <footer>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
