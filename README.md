@@ -29,6 +29,8 @@ possible ways to use this dataset:
 ./get_data.sh
 ```
 
+[archive.org comma dataset](https://archive.org/details/comma-dataset)
+
 45 GB compressed, 80 GB uncompressed
 
 ```
