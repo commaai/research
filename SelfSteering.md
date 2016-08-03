@@ -4,7 +4,9 @@ This experiment is similar to [End to End Learning for Self-Driving
 Cars](https://arxiv.org/abs/1604.07316).
 
 1) Download dataset
--TODO
+```
+./get_data.sh
+```
 
 2) Start training data server in the first terminal session
 ```bash

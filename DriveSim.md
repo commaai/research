@@ -3,7 +3,9 @@ Follow the instructions to train a generative model as described by
 [Learning a Driving Simulator]().
 
 1) Download dataset
-# TODO
+```
+./get_data.sh
+```
 
 2) Start data server in the first terminal session
 ```bash
