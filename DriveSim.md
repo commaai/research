@@ -1,6 +1,6 @@
 # Drive Simulator
 Follow the instructions to train a generative model as described by
-[Learning a Driving Simulator]().
+[Learning a Driving Simulator](http://arxiv.org/abs/1608.01230).
 
 1) Download dataset
 ```
