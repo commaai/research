@@ -14,7 +14,7 @@ Follow the instructions to train a generative model as described by
 For maximum performance we recommend using tmux. screen is not good.  
 3) Train auto encoder in the second terminal
 ```bash
-./main autoencoder --batch 64
+./train_generative_model.py autoencoder --batch 64
 ```
 This will create two folders called `outputs/results_autoencoder` with model checkpoints
 and `outputs/samples_autoencoder` with samples from the generative model. In the sampled
@@ -25,7 +25,7 @@ start training the transition model
 
 4). Run server for transition model
 ```bash
-./server.py --time 15 --batch 64
+./server.py --time 60 --batch 64
 ```
 
 5) Train transition model
