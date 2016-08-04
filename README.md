@@ -2,7 +2,7 @@
 
 ## the paper
 
-[Learning a Driving Simulator](paper/commalds.pdf)
+[Learning a Driving Simulator](http://arxiv.org/abs/1608.01230)
 
 ## the comma.ai driving dataset
 
