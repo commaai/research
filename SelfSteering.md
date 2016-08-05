@@ -13,7 +13,7 @@ Cars](https://arxiv.org/abs/1604.07316).
 ./server.py --batch 200 --port 5557
 ```  
 
-3) Start validation data server in the first terminal session
+3) Start validation data server in a second terminal session
 ```bash
 ./server.py --batch 200 --validation --port 5556
 ```
