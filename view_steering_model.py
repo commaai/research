@@ -71,7 +71,7 @@ def calc_curvature(v_ego, angle_steers, angle_offset=0):
   return curvature
 
 def calc_lookahead_offset(v_ego, angle_steers, d_lookahead, angle_offset=0):
-  #*** this function return teh lateral offset given the steering angle, speed and the lookahead distance
+  #*** this function return the lateral offset given the steering angle, speed and the lookahead distance
   curvature = calc_curvature(v_ego, angle_steers, angle_offset)
 
   # clip is to avoid arcsin NaNs due to too sharp turns
