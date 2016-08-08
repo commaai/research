@@ -45,7 +45,7 @@ Keys starting with "velodyne_" refer to the HDL-32 Velodyne unit.
 | rpm_post_torque   |                                                                          |
 | selfdrive         |                                                                          |
 | speed             | m/s, from encoder after transmission, negative when gear is Revese       |
-| speed_abs         | m/s, from encoder after transmisison,                                    |
+| speed_abs         | m/s, from encoder after transmission,                                    |
 | speed_fl          | Individual wheels speeds (m/s)                                           |
 | speed_fr          |                                                                          |
 | speed_rl          |                                                                          |
