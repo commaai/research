@@ -29,5 +29,5 @@ Cars](https://arxiv.org/abs/1604.07316).
 ```
 <img src="./images/selfsteer.gif">
 
-Your job is to make the predicted `green` path to be extractly equal to the actual `blue` path. Once your get that you have a self-driving car. Next step: get yourself some funding.
+Your job is to make the predicted `green` path to be equal to the actual `blue` path. Once you get that you have a self-driving car. Next step: get yourself some funding.
 
