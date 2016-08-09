@@ -30,7 +30,7 @@ Keys starting with "velodyne_" refer to the HDL-32 Velodyne unit.
 | brake_user        | User brake pedal depression [0-4095]                                     |
 | cam1_ptr          | Camera frame index at this time                                          |
 | cam2_ptr          |                                                                          |
-| car_accel         |                                                                          |
+| car_accel         | m/s^2, from derivative of wheel speed                                    |
 | fiber_accel       | m/s^2                                                                    |
 | fiber_compass     |                                                                          |
 | fiber_compass_x   |                                                                          |
@@ -42,17 +42,17 @@ Keys starting with "velodyne_" refer to the HDL-32 Velodyne unit.
 | gear_choice       | Selected gear. 0- park/neutral, 10- reverse, 11- gear currently changing |
 | idx               |                                                                          |
 | rpm               |                                                                          |
-| rpm_post_torque   |                                                                          |
+| rpm_post_torque   | post torque-converter                                                    |
 | selfdrive         |                                                                          |
 | speed             | m/s, from encoder after transmission, negative when gear is Revese       |
-| speed_abs         | m/s, from encoder after transmission,                                    |
+| speed_abs         | m/s, from encoder after transmission                                     |
 | speed_fl          | Individual wheels speeds (m/s)                                           |
 | speed_fr          |                                                                          |
 | speed_rl          |                                                                          |
 | speed_rr          |                                                                          |
 | standstill        | Is the car stopped?                                                      |
 | steering_angle    |                                                                          |
-| steering_torque   |                                                                          |
+| steering_torque   | deg/s, despite the name, this is the steering angle rate                 |
 | times             | seconds                                                                  |
 | velodyne_gps      |                                                                          |
 | velodyne_heading  |                                                                          |
