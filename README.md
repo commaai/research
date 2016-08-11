@@ -86,7 +86,7 @@ Show us amazing stuff on this dataset
 
 ## Discussions
 
-For discussions and questions, [![Join https://gitter.im/commaai-research/Lobby](https://badges.gitter.im/Join%20Chat.svg)]  
+For discussions and questions, [![Join https://gitter.im/commaai-research/Lobby](https://badges.gitter.im/Join%20Chat.svg)] (https://gitter.im/commaai-research/discussions) 
 
 ## Credits
 
