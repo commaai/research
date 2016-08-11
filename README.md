@@ -84,6 +84,10 @@ Want a job at [comma.ai](http://comma.ai)?
 
 Show us amazing stuff on this dataset
 
+## Discussions
+
+For discussions and questions, [![Join https://gitter.im/commaai-research/Lobby](https://badges.gitter.im/Join%20Chat.svg)]  
+
 ## Credits
 
 Riccardo Biasini, George Hotz, Sam Khalandovsky, Eder Santana, and Niel van der Westhuizen
