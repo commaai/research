@@ -37,8 +37,8 @@ and `outputs/samples_transition` with samples from the generative model
 
 Training logs will be saved to `/tmp/logs/<model_name>`. You can visualize
 logs using Tensorboard by typing
-`tensorborad --logdir /tmp/logs/autoencoder` or  
-`tensorborad --logdir /tmp/logs/transition`
+`tensorboard --logdir /tmp/logs/autoencoder` or  
+`tensorboard --logdir /tmp/logs/transition`
 
 6) Make a gif of the transition model
 ```bash
