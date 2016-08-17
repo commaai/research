@@ -22,7 +22,7 @@ def gen(hwm, host, port):
 
 
 def get_model(time_len=1):
-  ch, row, col = 3, 160, 320  # camera foramt
+  ch, row, col = 3, 160, 320  # camera format
 
   model = Sequential()
   model.add(Lambda(lambda x: x/127.5 - 1.,
