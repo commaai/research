@@ -25,7 +25,7 @@ Cars](https://arxiv.org/abs/1604.07316).
 
 4) Visualize results
 ```bash
-./view_steering_model.py ./outputs/steering_model/steering_model.json
+./view_steering_model.py ./outputs/steering_model/steering_angle.json
 ```
 <img src="./images/selfsteer.gif">
 
