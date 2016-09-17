@@ -53,9 +53,9 @@ if __name__ == "__main__":
     g_train, d_train, sampler, saver, loader, [G, E, T] = get_model(sess=sess, name=args.name, batch_size=args.batch, gpu=args.gpu)
 
     print("loading weights...")
-    G.load_weights("./results_autoencoder/G_weights.keras".format(args.name))
-    E.load_weights("./results_autoencoder/E_weights.keras".format(args.name))
-    checkpoint_dir = './results_' + args.name
+    G.load_weights("./outputs/results_autoencoder/G_weights.keras".format(args.name))
+    E.load_weights("./outputs/results_autoencoder/E_weights.keras".format(args.name))
+    checkpoint_dir = './outputs/results_' + args.name
     T.load_weights(checkpoint_dir+"/T_weights.keras")
 
     if not os.path.exists("./video_"+args.name):
