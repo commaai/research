@@ -38,7 +38,7 @@ def cleanup(data):
 
 def transition(batch_size, dim=1000):
     model = Sequential()
-    model.add(DreamyRNN(output_dim=z_dim, output_length=out_leng-1, return_sequences=True,
+    model.add(DreamyRNN(unroll=True, output_dim=z_dim, output_length=out_leng-1, return_sequences=True,
                         activation="tanh", batch_input_shape=(batch_size, time, z_dim)))
     return model
 

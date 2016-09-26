@@ -368,7 +368,8 @@ class DreamyRNN(Recurrent):
                                          states, go_backwards=self.go_backwards,
                                          mask=mask,
                                          constants=constants,
-                                         input_length=self.output_length)
+                                         input_length=self.output_length,
+                                         unroll=self.unroll)
 
     last_output = K.dot(last_output, self.V) + self.ext_b
     outputs = K.concatenate([outputs_0, outputs], axis=1)
@@ -569,7 +570,8 @@ class CondDreamyRNN(Recurrent):
                                          states, go_backwards=self.go_backwards,
                                          mask=mask,
                                          constants=constants,
-                                         input_length=self.output_length)
+                                         input_length=self.output_length,
+                                         unroll=self.unroll)
 
     last_output = K.dot(last_output, self.V) + self.ext_b
     outputs = K.concatenate([outputs_0, outputs], axis=1)
