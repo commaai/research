@@ -17,7 +17,7 @@ def concatenate(camera_names, time_len):
   logs_names = [x.replace('camera', 'log') for x in camera_names]
 
   angle = []  # steering angle of the car
-  speed = []  # steering angle of the car
+  speed = []  # speed of the car
   hdf5_camera = []  # the camera hdf5 files need to continue open
   c5x = []
   filters = []
@@ -33,7 +33,9 @@ def concatenate(camera_names, time_len):
 
         speed_value = t5["speed"][:]
         steering_angle = t5["steering_angle"][:]
-        idxs = np.linspace(0, steering_angle.shape[0]-1, x.shape[0]).astype("int")  # approximate alignment
+
+        # approximate alignment
+        idxs = np.linspace(0, steering_angle.shape[0]-1, x.shape[0]).astype("int")
         angle.append(steering_angle[idxs])
         speed.append(speed_value[idxs])
 
@@ -84,52 +86,37 @@ def datagen(filter_files, time_len=1, batch_size=256, ignore_goods=False):
 
   while True:
     try:
-      t = time.time()
-
-      count = 0
       start = time.time()
-      while count < batch_size:
-        if not ignore_goods:
-          i = np.random.choice(filters)
-          # check the time history for goods
-          good = True
-          for j in (i-time_len+1, i+1):
-            if j not in filters_set:
-              good = False
-          if not good:
-            continue
 
-        else:
-          i = np.random.randint(time_len+1, len(angle), 1)
+      for count in range(time_len):
+        # first choose a rnd hdf5 bucket, then a rnd index
+        # c5x[i] = (idx_start, idx_end, hdf5 dataset "X")
+        idx_hdf5 = np.random.choice(len(hdf5_camera))
+        (idx_start, idx_end, x) = c5x[idx_hdf5]
+        idx = np.random.randint(idx_start, idx_end-time_len+1)
 
-        # GET X_BATCH
-        # low quality loop
-        for es, ee, x in c5x:
-          if i >= es and i < ee:
-            X_batch[count] = x[i-es-time_len+1:i-es+1]
-            break
-
-        angle_batch[count] = np.copy(angle[i-time_len+1:i+1])[:, None]
-        speed_batch[count] = np.copy(speed[i-time_len+1:i+1])[:, None]
-
-        count += 1
+        # get X_BATCH
+        X_batch[count] = x[(idx-idx_start):(idx-idx_start+time_len)]
+        angle_batch[count] = np.copy(angle[idx:(idx+time_len)])[:, None]
+        speed_batch[count] = np.copy(speed[idx:(idx+time_len)])[:, None]
 
       # sanity check
       assert X_batch.shape == (batch_size, time_len, 3, 160, 320)
 
-      logging.debug("load image : {}s".format(time.time()-t))
-      print("%5.2f ms" % ((time.time()-start)*1000.0))
+      logging.debug("load image : {}s".format(time.time()-start))
+      print("%6.2f ms" % ((time.time()-start)*1000.0))
 
       if first:
-        print "X", X_batch.shape
-        print "angle", angle_batch.shape
-        print "speed", speed_batch.shape
+        print("shape of X_batch: (%s)" % ', '.join(map(str, X_batch.shape)))
+        print("shape of angle: (%s)" % ', '.join(map(str, angle_batch.shape)))
+        print("shape of speed: (%s)" % ', '.join(map(str, speed_batch.shape)))
         first = False
 
       yield (X_batch, angle_batch, speed_batch)
 
     except KeyboardInterrupt:
       raise
+
     except:
       traceback.print_exc()
       pass
