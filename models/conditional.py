@@ -39,7 +39,7 @@ def cleanup(data):
 
 def transition(batch_size, dim=1000):
     model = Sequential()
-    model.add(CondDreamyRNN(output_dim=z_dim, output_length=out_leng, return_sequences=True, activation="tanh", batch_input_shape=(batch_size, time+out_leng, z_dim+2)))
+    model.add(CondDreamyRNN(unroll=True, output_dim=z_dim, output_length=out_leng, return_sequences=True, activation="tanh", batch_input_shape=(batch_size, time+out_leng, z_dim+2)))
     return model
 
 
