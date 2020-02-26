@@ -1,10 +1,10 @@
-# the people's comma
+# The people's comma
 
-## the paper
+## The paper
 
 [Learning a Driving Simulator](http://arxiv.org/abs/1608.01230)
 
-## the comma.ai driving dataset
+## The comma.ai driving dataset
 
 7 and a quarter hours of largely highway driving. Enough to train what we had in [Bloomberg](http://www.bloomberg.com/features/2015-george-hotz-self-driving-car/).
 
@@ -82,8 +82,8 @@ between camera frames and the other measurements.
 
 Want a job at [comma.ai](http://comma.ai)?
 
-Show us amazing stuff on this dataset
+Show us *amazing stuff* on this dataset.
 
 ## Credits
 
-Riccardo Biasini, George Hotz, Sam Khalandovsky, Eder Santana, and Niel van der Westhuizen
+Riccardo Biasini, George Hotz, Sam Khalandovsky, Eder Santana and Niel van der Westhuizen
