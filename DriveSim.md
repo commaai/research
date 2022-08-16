@@ -2,7 +2,7 @@
 Follow the instructions to train a generative model as described by
 [Learning a Driving Simulator](http://arxiv.org/abs/1608.01230).
 
-1) Download dataset
+1) Download the dataset
 ```
 ./get_data.sh
 ```
@@ -11,16 +11,16 @@ Follow the instructions to train a generative model as described by
 ```bash
 ./server.py --batch 64
 ```
-For maximum performance we recommend using tmux. screen is not good.  
+For maximum performance, we recommend using tmux. Screen is not good.  
 3) Train auto encoder in the second terminal
 ```bash
 ./train_generative_model.py autoencoder --batch 64
 ```
 This will create two folders called `outputs/results_autoencoder` with model checkpoints
 and `outputs/samples_autoencoder` with samples from the generative model. In the sampled
-images odd columns are generated and even column images are target images.  
+images, odd columns are generated and even column images are target images.  
 
-Once the autoencoder model is trained you can stop the previous server and
+Once the autoencoder model is trained, you can stop the previous server and
 start training the transition model
 
 4). Run server for transition model
@@ -46,4 +46,4 @@ logs using Tensorboard by typing
 ```
 <img src="./images/drive_simulator.gif">
 
-Here your job is to make the video look so great that it could be used train a steering angle model.
+Here, your job is to make the video look so great that it could be used to train a steering angle model.
